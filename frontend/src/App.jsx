@@ -10,8 +10,7 @@ function App() {
   const [view, setView] = useState(() => (getCurrentUser() ? "dashboard" : "login"));
 
   useEffect(() => {
-    const user = getCurrentUser();
-    if (user) {
+    if (getCurrentUser()) {
       setView("dashboard");
     }
   }, []);
