@@ -144,24 +144,6 @@ const deleteBooking = async (req, res) => {
     }
 };
 
-/**
- * Get booking reminders.
- */
-const getReminders = async (req, res) => {
-    try {
-        const result = await bookingService.getReminders();
-
-        return res.status(200).json(result);
-    } catch (error) {
-        console.error('Get Booking Reminders Error:', error);
-
-        return res.status(500).json({
-            success: false,
-            message: 'Internal Server Error'
-        });
-    }
-};
-
 module.exports = {
     createBooking,
     getBookingById,
@@ -169,6 +151,5 @@ module.exports = {
     getEmployeeBookings,
     updateBooking,
     cancelBooking,
-    deleteBooking,
-    getReminders
+    deleteBooking
 };

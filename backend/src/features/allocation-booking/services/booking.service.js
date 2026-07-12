@@ -279,52 +279,6 @@ async function deleteBooking(bookingId) {
     }
 }
 
-/**
- * Get reminders for bookings starting within 15 minutes.
- */
-async function getReminders() {
-    try {
-        const bookings = await bookingModel.getUpcomingBookings();
-        const refreshedBookings = await syncBookingsStatus(bookings);
-        const currentTime = new Date();
-
-        const reminders = refreshedBookings
-            .filter((booking) => booking.booking_status === 'Upcoming')
-            .map((booking) => {
-                const startDateTime = new Date(`${booking.booking_date}T${booking.start_time}`);
-                const reminderWindowStart = new Date(startDateTime.getTime() - 15 * 60 * 1000);
-                const isReminderDue = currentTime >= reminderWindowStart && currentTime < startDateTime;
-
-                return {
-                    booking_id: booking.booking_id,
-                    asset_id: booking.asset_id,
-                    employee_id: booking.employee_id,
-                    asset_name: null,
-                    employee_name: null,
-                    start_time: booking.start_time,
-                    message: 'Booking starts in 15 minutes.'
-                };
-            })
-            .filter((reminder) => {
-                const booking = refreshedBookings.find((item) => item.booking_id === reminder.booking_id);
-                if (!booking) {
-                    return false;
-                }
-
-                const startDateTime = new Date(`${booking.booking_date}T${booking.start_time}`);
-                const reminderWindowStart = new Date(startDateTime.getTime() - 15 * 60 * 1000);
-                return currentTime >= reminderWindowStart && currentTime < startDateTime;
-            });
-
-        return {
-            success: true,
-            data: reminders
-        };
-    } catch (error) {
-        throw error;
-    }
-}
-
 module.exports = {
     createBooking,
     getBooking,
@@ -332,6 +286,5 @@ module.exports = {
     getEmployeeBookings,
     updateBooking,
     cancelBooking,
-    deleteBooking,
-    getReminders
+    deleteBooking
 };

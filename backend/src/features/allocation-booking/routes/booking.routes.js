@@ -26,13 +26,6 @@ router.get('/', bookingController.getAllBookings);
 router.get('/employee/:employeeId', bookingController.getEmployeeBookings);
 
 /**
- * @route   GET /reminders
- * @desc    Get booking reminders for the next 15 minutes
- * @access  Private
- */
-router.get('/reminders', bookingController.getReminders);
-
-/**
  * @route   GET /:id
  * @desc    Get booking by ID
  * @access  Private
