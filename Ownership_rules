@@ -1,4 +1,4 @@
-## Member 1
+## Member 1 - Jatra Shah
 
 IMPORTANT DEVELOPMENT RULES
 
@@ -54,7 +54,7 @@ Only generate files related to:
 Keep the code modular and integration-friendly.
 
 
-## Member 2
+## Member 2 - Yesha Parwani
 IMPORTANT DEVELOPMENT RULES
 
 You are working as Member 2 in a team of four developers.
@@ -109,7 +109,7 @@ Only generate files related to:
 
 Keep everything modular.
 
-## Member 3
+## Member 3 - Deepshikha Chaurasia
 IMPORTANT DEVELOPMENT RULES
 
 You are working as Member 3 in a team of four developers.
@@ -163,7 +163,7 @@ Only generate files related to:
 
 Keep everything modular.
 
-## Member 4
+## Member 4 - Harshit Suthar
 IMPORTANT DEVELOPMENT RULES
 
 You are working as Member 4 in a team of four developers.
@@ -216,3 +216,13 @@ Only generate files related to:
 - Activity Logs
 
 Keep everything modular.
+
+---
+
+## Team-wide Rules
+
+- Every member must stay inside their assigned feature folder.
+- Shared code belongs in the shared folders only.
+- The Team Lead is responsible for final integration.
+- Do not overwrite another person's work.
+- Keep changes small and easy to review.

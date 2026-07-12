@@ -9,6 +9,15 @@ This repository now uses one clear main structure for the hackathon team.
 - Member 3: Asset Allocation + Transfer + Resource Booking
 - Member 4: Maintenance + Audit + Reports + Notifications
 
+## Golden Rules for All Team Members
+
+- Work only inside your assigned feature folder.
+- Do not edit another member's feature folder.
+- Do not modify [frontend/src/App.jsx](frontend/src/App.jsx) or [backend/src/server.js](backend/src/server.js) unless you are the Team Lead.
+- Keep shared code inside [frontend/src/shared](frontend/src/shared) and [backend/src/shared](backend/src/shared).
+- Use small, modular changes.
+- Save your work often and test before finishing.
+
 ## File Ownership Guide
 
 ### Member 1
